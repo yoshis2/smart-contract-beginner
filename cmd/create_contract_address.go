@@ -6,12 +6,15 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/yoshis2/GolangSmartContract/api" // this would be your generated smart contract bindings
+	// this would be your generated smart contract bindings
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
+	"github.com/yoshis2/smart-contract-beginner/contracts"
 )
+
+const PRIVATE_KEY = "22aabb811efca4e6f4748bd18a46b502fa85549df9fa07da649c0a148d7d5530"
 
 func main() {
 	client, err := ethclient.Dial("http://127.0.0.1:8545")
@@ -19,7 +22,7 @@ func main() {
 		panic(err)
 	}
 
-	privateKey, err := crypto.HexToECDSA("PRIVATE_KEY")
+	privateKey, err := crypto.HexToECDSA(PRIVATE_KEY)
 	if err != nil {
 		panic(err)
 	}
@@ -50,7 +53,7 @@ func main() {
 	auth.GasLimit = uint64(3000000) // in units
 	auth.GasPrice = big.NewInt(1000000)
 
-	address, tx, instance, err := api.DeployApi(auth, client)
+	address, tx, instance, err := contracts.DeployContracts(auth, client)
 	if err != nil {
 		panic(err)
 	}

@@ -9,7 +9,7 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/yoshis2/GolangSmartContract/api"
+	"github.com/yoshis2/smart-contract-beginner/contracts"
 )
 
 // ここの２つの変数を修正して実行する
@@ -17,7 +17,7 @@ const (
 	// ganacheの起動したときのポートを指定 (8545 か 7545)
 	GANACHE_PORT = "8545"
 	// 先ほど作成したプログラムから取得した。　CONTRACT_ADDRESSを取得
-	CONTRACT_ADDRESS = "0x476059cD57800DB8eB88f67c2Aa38A6fCf8251e0"
+	CONTRACT_ADDRESS = "0xEa2ff902dbeEECcc828757B881b343F9316752e5"
 )
 
 func main() {
@@ -25,7 +25,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	conn, err := api.NewApi(common.HexToAddress(CONTRACT_ADDRESS), client)
+	conn, err := contracts.NewContracts(common.HexToAddress(CONTRACT_ADDRESS), client)
 	if err != nil {
 		panic(err)
 	}
@@ -33,7 +33,7 @@ func main() {
 	run(conn)
 }
 
-func run(conn *api.Api) error {
+func run(conn *contracts.Contracts) error {
 	e := echo.New()
 
 	// Middleware

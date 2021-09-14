@@ -1,4 +1,4 @@
-module github.com/yoshis2/GolangSmartContract
+module github.com/yoshis2/smart-contract-beginner
 
 go 1.17
 
