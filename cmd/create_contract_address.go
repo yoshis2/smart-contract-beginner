@@ -14,6 +14,7 @@ import (
 	"github.com/yoshis2/smart-contract-beginner/contracts"
 )
 
+// Ganacheのprivate keyの頭文字0xを外したキー
 const PRIVATE_KEY = "22aabb811efca4e6f4748bd18a46b502fa85549df9fa07da649c0a148d7d5530"
 
 func main() {

@@ -16,3 +16,5 @@
 
 build
 node_modules
+ganache_data
+contracts/smart_contract_start.go
