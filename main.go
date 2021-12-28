@@ -17,7 +17,7 @@ const (
 	// ganacheの起動したときのポートを指定 (8545 か 7545)
 	GANACHE_PORT = "8545"
 	// 先ほど作成したプログラムから取得した。　CONTRACT_ADDRESSを取得
-	CONTRACT_ADDRESS = "0xEa2ff902dbeEECcc828757B881b343F9316752e5"
+	CONTRACT_ADDRESS = "0x77E533f33578b15231658cA9C8EeDf709D14ed50"
 )
 
 func main() {

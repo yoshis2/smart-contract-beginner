@@ -15,7 +15,7 @@ import (
 )
 
 // Ganacheのprivate keyの頭文字0xを外したキー
-const PRIVATE_KEY = "22aabb811efca4e6f4748bd18a46b502fa85549df9fa07da649c0a148d7d5530"
+const PRIVATE_KEY = "ac66c400d9b3d0d1409dbc0c769fe152d1e6cb191ec52e7c0692262e312d9da6"
 
 func main() {
 	client, err := ethclient.Dial("http://127.0.0.1:8545")

@@ -9,4 +9,6 @@ contract SmartContractStart {
     function Greet(string memory str) public pure returns (string memory) {
         return str;
     }
+
 }
+
