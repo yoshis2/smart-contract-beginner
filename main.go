@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"net/http"
 
+	"smart-contract-beginner/contracts"
+
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/yoshis2/smart-contract-beginner/contracts"
 )
 
 // ここの２つの変数を修正して実行する

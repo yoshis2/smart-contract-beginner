@@ -1,0 +1,27 @@
+services:
+  geth:
+    image: geth
+    build:
+      context: .
+      dockerfile: docker/client.Dockerfile
+    volumes:
+      - ".:/usr/src/app"
+    working_dir: /usr/src/app
+  solc:
+    image: ethereum/solc:stable
+    platform: linux/amd64
+    volumes:
+      - ".:/usr/src/app"
+    working_dir: /usr/src/app
+  ganache:
+    image: trufflesuite/ganache:latest
+    platform: linux/amd64
+    volumes:
+      - ".:/usr/src/app"
+      - ./data/ganache_data:/ganache_data
+    working_dir: /usr/src/app
+    ports:
+      - "8545:8545" # local EVM blockchain
+    command:
+      - --db=/ganache_data
+      - -m relax notable trophy asset motor airport deal gain kidney aerobic ski poem
